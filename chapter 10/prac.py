@@ -1,0 +1,16 @@
+import random
+
+def game():
+    score = random.randint(1, 100)
+    print(f"this is a score {score}")    
+    return score
+
+score  = game()
+with open("hiscore.txt", "r") as f:
+    hiscore = int(f.read())
+
+if hiscore<score:
+    with open("hiscore.txt", "w") as f:
+        f.write(str(score))
+
+ 
